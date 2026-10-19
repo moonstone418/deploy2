@@ -1,114 +1,445 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya - Web Developer & Designer</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- CSS Internal -->
+    <title>SMPN 3 Colomadu - Website Resmi Sekolah</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- Header & Navbar -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">Porto<span>folio.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
+    <!-- Top Bar -->
+    <div class="bg-emerald-900 text-emerald-100 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-envelope mr-1.5"></i> info@smpn3colomadu.sch.id</span>
+                <span><i class="fas fa-phone mr-1.5"></i> (0271) 781234</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-emerald-800 px-2.5 py-0.5 rounded-full text-emerald-200 font-medium">Akreditasi A</span>
+                <div class="flex gap-2">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-lg text-emerald-900 leading-tight">SMPN 3 COLOMADU</span>
+                    <span class="block text-xs text-gray-500 font-medium">Kabupaten Karanganyar</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#beranda" class="text-emerald-600 hover:text-emerald-700 transition">Beranda</a>
+                <a href="#profil" class="text-gray-600 hover:text-emerald-600 transition">Profil</a>
+                <a href="#visimisi" class="text-gray-600 hover:text-emerald-600 transition">Visi & Misi</a>
+                <a href="#berita" class="text-gray-600 hover:text-emerald-600 transition">Berita</a>
+                <a href="#galeri" class="text-gray-600 hover:text-emerald-600 transition">Galeri</a>
+                <a href="#kontak" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl shadow-sm transition">Hubungi Kami</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-3 font-medium shadow-lg">
+            <a href="#beranda" class="block text-emerald-600 py-1">Beranda</a>
+            <a href="#profil" class="block text-gray-600 py-1">Profil</a>
+            <a href="#visimisi" class="block text-gray-600 py-1">Visi & Misi</a>
+            <a href="#berita" class="block text-gray-600 py-1">Berita</a>
+            <a href="#galeri" class="block text-gray-600 py-1">Galeri</a>
+            <a href="#kontak" class="block bg-emerald-600 text-white text-center py-2.5 rounded-xl mt-2">Hubungi Kami</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h3>Halo, Saya</h3>
-            <h1>Nama Anda</h1>
-            <p>Seorang <span>Web Developer & UI/UX Designer</span> yang bersemangat menciptakan pengalaman digital yang menarik.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-                <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Saya adalah pengembang web pemula yang memiliki ketertarikan tinggi pada desain antarmuka dan teknologi web modern. Saya suka memecahkan masalah melalui kode dan terus belajar hal-hal baru di dunia teknologi.</p>
-                    <div class="skills">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                    </div>
+    <section id="beranda" class="relative bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-900 text-white py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-emerald-800/80 border border-emerald-700 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full mb-6 uppercase tracking-wider">
+                    Sekolah Berprestasi & Berkarakter
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                    Selamat Datang di Website Resmi <span class="text-emerald-400">SMPN 3 Colomadu</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-emerald-100/90 mb-8 font-light leading-relaxed">
+                    Mewujudkan generasi unggul, cerdas, berakhlak mulia, serta siap menghadapi tantangan era digital berlandaskan Profil Pelajar Pancasila.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#profil" class="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-900/30 text-center transition">
+                        Jelajahi Profil
+                    </a>
+                    <a href="#berita" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-8 py-3.5 rounded-xl backdrop-blur-sm text-center transition">
+                        Baca Berita Terbaru
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Proyek Terbaru</h2>
-            <div class="project-grid">
-                <!-- Proyek 1 -->
-                <div class="project-card">
-                    <div class="project-img placeholder-1"></div>
-                    <div class="project-info">
-                        <h3>Website E-Commerce</h3>
-                        <p>Platform toko online sederhana yang dibangun menggunakan HTML, CSS, dan JavaScript.</p>
-                        <a href="#" class="project-link">Lihat Detail &rarr;</a>
+    <!-- Statistik Singkat -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 mb-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl mx-auto flex items-center justify-center text-xl mb-3">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">750+</h3>
+                <p class="text-xs sm:text-sm text-gray-500 font-medium">Peserta Didik</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl mx-auto flex items-center justify-center text-xl mb-3">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">50+</h3>
+                <p class="text-xs sm:text-sm text-gray-500 font-medium">Pendidik & Tenaga Kependidikan</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl mx-auto flex items-center justify-center text-xl mb-3">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">20+</h3>
+                <p class="text-xs sm:text-sm text-gray-500 font-medium">Ekstrakurikuler & Prestasi</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl mx-auto flex items-center justify-center text-xl mb-3">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">100%</h3>
+                <p class="text-xs sm:text-sm text-gray-500 font-medium">Berbasis Digital & Kurikulum Merdeka</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sambutan Kepala Sekolah & Profil -->
+    <section id="profil" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 relative">
+                <div class="absolute -inset-4 bg-emerald-600/10 rounded-3xl -z-10 transform -rotate-2"></div>
+                <div class="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="h-96 bg-gray-200 rounded-xl overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" alt="Kepala Sekolah" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-bold text-gray-900 text-lg">Drs. H. Sugeng Riyadi, M.Pd.</h4>
+                        <p class="text-xs text-emerald-600 font-semibold uppercase tracking-wider">Kepala SMPN 3 Colomadu</p>
                     </div>
                 </div>
-                <!-- Proyek 2 -->
-                <div class="project-card">
-                    <div class="project-img placeholder-2"></div>
-                    <div class="project-info">
-                        <h3>Aplikasi To-Do List</h3>
-                        <p>Aplikasi pengelola tugas harian interaktif dengan fitur penyimpanan lokal.</p>
-                        <a href="#" class="project-link">Lihat Detail &rarr;</a>
-                    </div>
+            </div>
+            <div class="lg:col-span-7 space-y-6">
+                <div>
+                    <span class="text-emerald-600 font-semibold text-xs uppercase tracking-wider">Sambutan Kepala Sekolah</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-1">Membangun Generasi Unggul Berkarakter Pelajar Pancasila</h2>
                 </div>
-                <!-- Proyek 3 -->
-                <div class="project-card">
-                    <div class="project-img placeholder-3"></div>
-                    <div class="project-info">
-                        <h3>Landing Page Kreatif</h3>
-                        <p>Desain halaman peluncuran produk yang responsif dan estetis.</p>
-                        <a href="#" class="project-link">Lihat Detail &rarr;</a>
+                <p class="text-gray-600 leading-relaxed font-light">
+                    Assalamu’alaikum Warahmatullahi Wabarakatuh.<br>
+                    Puji syukur kita panjatkan ke hadirat Allah SWT atas rahmat dan karunia-Nya sehingga website resmi SMPN 3 Colomadu ini dapat hadir sebagai sarana informasi dan komunikasi interaktif bagi warga sekolah dan masyarakat luas.
+                </p>
+                <p class="text-gray-600 leading-relaxed font-light">
+                    Di tengah pesatnya perkembangan teknologi informasi, sekolah dituntut untuk terus beradaptasi. Website ini diharapkan mampu menjadi jendela transparansi program sekolah sekaligus media kolaborasi yang efektif dalam memajukan kualitas pendidikan peserta didik kami di Kabupaten Karanganyar.
+                </p>
+                <div class="pt-4 flex items-center gap-6">
+                    <div>
+                        <span class="block text-2xl font-bold text-emerald-600">30+ Tahun</span>
+                        <span class="text-xs text-gray-500 font-medium">Dedikasi Pendidikan</span>
+                    </div>
+                    <div class="h-10 w-px bg-gray-200"></div>
+                    <div>
+                        <span class="block text-2xl font-bold text-emerald-600">Adiwiyata</span>
+                        <span class="text-xs text-gray-500 font-medium">Sekolah Peduli Lingkungan</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <p class="contact-desc">Tertarik bekerja sama atau ingin menyapa? Silakan kirim pesan melalui formulir di bawah ini.</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Nama Anda" required>
-                <input type="email" placeholder="Email Anda" required>
-                <textarea rows="5" placeholder="Pesan Anda" required></textarea>
-                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-            </form>
+    <!-- Visi & Misi -->
+    <section id="visimisi" class="py-20 bg-emerald-950 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-emerald-400 font-semibold text-xs uppercase tracking-wider">Landasan Sekolah</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Visi & Misi SMPN 3 Colomadu</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Visi -->
+                <div class="bg-emerald-900/50 border border-emerald-800 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Visi Sekolah</h3>
+                    <p class="text-emerald-100/90 leading-relaxed font-light italic">
+                        "Terwujudnya peserta didik yang cerdas, terampil, berkarakter luhur, berwawasan lingkungan, serta kompeten di era global berlandaskan Profil Pelajar Pancasila."
+                    </p>
+                </div>
+                <!-- Misi -->
+                <div class="bg-emerald-900/50 border border-emerald-800 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Misi Utama</h3>
+                    <ul class="space-y-3 text-emerald-100/90 text-sm font-light">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-emerald-400 mt-1"></i>
+                            <span>Melaksanakan pembelajaran aktif, inovatif, kreatif, dan menyenangkan berbasis teknologi.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-emerald-400 mt-1"></i>
+                            <span>Membentuk kepribadian siswa yang religius, berintegritas, dan menjunjung tinggi nilai budaya bangsa.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-emerald-400 mt-1"></i>
+                            <span>Mengembangkan budaya sekolah hijau, bersih, sehat, dan peduli lingkungan (Adiwiyata).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita & Pengumuman -->
+    <section id="berita" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+                <span class="text-emerald-600 font-semibold text-xs uppercase tracking-wider">Informasi Terkini</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-1">Berita & Agenda Sekolah</h2>
+            </div>
+            <a href="#" class="mt-4 md:mt-0 text-emerald-600 hover:text-emerald-700 font-medium text-sm flex items-center gap-2">
+                Lihat Semua Berita <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Berita 1 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600" alt="Berita 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium">Akademik</span>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-gray-400 font-medium"><i class="far fa-calendar-alt mr-1"></i> 18 Oktober 2026</span>
+                    <h3 class="font-bold text-gray-900 text-lg mt-2 mb-3 group-hover:text-emerald-600 transition">
+                        SMPN 3 Colomadu Sukses Gelar Asesmen Nasional Berbasis Komputer (ANBK) 2026
+                    </h3>
+                    <p class="text-gray-600 text-sm font-light line-clamp-3">
+                        Pelaksanaan ANBK tahun ini berjalan lancar dengan fasilitas laboratorium komputer terbaru yang memadai serta koneksi internet stabil.
+                    </p>
+                    <a href="#" class="inline-block mt-4 text-emerald-600 font-medium text-sm hover:underline">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Berita 2 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600" alt="Berita 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">Prestasi</span>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-gray-400 font-medium"><i class="far fa-calendar-alt mr-1"></i> 14 Oktober 2026</span>
+                    <h3 class="font-bold text-gray-900 text-lg mt-2 mb-3 group-hover:text-emerald-600 transition">
+                        Siswa SMPN 3 Colomadu Raih Juara 1 Lomba Olimpiade Sains Tingkat Kabupaten
+                    </h3>
+                    <p class="text-gray-600 text-sm font-light line-clamp-3">
+                        Kebanggaan kembali hadir setelah delegasi siswa kami berhasil menyabet medali emas dalam ajang OSN bidang Matematika.
+                    </p>
+                    <a href="#" class="inline-block mt-4 text-emerald-600 font-medium text-sm hover:underline">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Berita 3 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" alt="Berita 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs px-3 py-1 rounded-full font-medium">Kegiatan</span>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-gray-400 font-medium"><i class="far fa-calendar-alt mr-1"></i> 10 Oktober 2026</span>
+                    <h3 class="font-bold text-gray-900 text-lg mt-2 mb-3 group-hover:text-emerald-600 transition">
+                        Peringatan Hari Batik Nasional: Seluruh Warga Sekolah Kenakan Batik Unik
+                    </h3>
+                    <p class="text-gray-600 text-sm font-light line-clamp-3">
+                        Sebagai bentuk kecintaan terhadap budaya nusantara, seluruh guru dan siswa mengenakan busana batik terbaik dalam kegiatan upacara.
+                    </p>
+                    <a href="#" class="inline-block mt-4 text-emerald-600 font-medium text-sm hover:underline">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Foto -->
+    <section id="galeri" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-emerald-600 font-semibold text-xs uppercase tracking-wider">Dokumentasi</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-1">Galeri Kegiatan Sekolah</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=500" alt="Kegiatan Kelas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-sm font-medium">Suasana Pembelajaran Interaktif</span>
+                    </div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&q=80&w=500" alt="Laboratorium" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-sm font-medium">Praktikum Laboratorium Komputer</span>
+                    </div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=500" alt="Ekstrakurikuler" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-sm font-medium">Kegiatan Ekstrakurikuler Pramuka</span>
+                    </div>
+                </div>
+                <div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=500" alt="Perpustakaan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-sm font-medium">Pojok Literasi & Perpustakaan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Lokasi -->
+    <section id="kontak" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <span class="text-emerald-600 font-semibold text-xs uppercase tracking-wider">Hubungi Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-1 mb-6">Lokasi & Layanan Informasi</h2>
+                <p class="text-gray-600 font-light mb-8">
+                    Silakan kunjungi langsung sekolah kami atau kirimkan pesan melalui formulir berikut untuk informasi pendaftaran siswa baru maupun pertanyaan seputar akademik.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Alamat Sekolah</h4>
+                            <p class="text-gray-600 text-xs font-light">Jl. Raya Colomadu No. 123, Kabupaten Karanganyar, Jawa Tengah</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Email Resmi</h4>
+                            <p class="text-gray-600 text-xs font-light">info@smpn3colomadu.sch.id</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Jam Operasional</h4>
+                            <p class="text-gray-600 text-xs font-light">Senin - Jumat: 07.00 - 15.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Kontak -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 relative">
+                <!-- Notifikasi sukses kustom -->
+                <div id="form-success" class="hidden absolute inset-0 bg-white/95 rounded-3xl z-20 flex flex-col items-center justify-center text-center p-6">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-xl mb-2">Pesan Berhasil Terkirim!</h3>
+                    <p class="text-gray-600 text-sm mb-6">Terima kasih telah menghubungi SMPN 3 Colomadu. Tim kami akan segera merespons pesan Anda.</p>
+                    <button id="reset-form" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-2 rounded-xl text-sm transition">Kirim Pesan Lain</button>
+                </div>
+
+                <form id="contact-form" class="space-y-4">
+                    <h3 class="font-bold text-gray-900 text-xl mb-4">Kirim Pesan / Pertanyaan</h3>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" id="name" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-700 mb-1">Email / No. WhatsApp</label>
+                        <input type="text" id="email" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-700 mb-1">Pesan Anda</label>
+                        <textarea rows="4" id="message" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600 transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-xl shadow-md transition">
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Nama Anda. Dibuat dengan ❤️ menggunakan HTML & CSS.</p>
+    <footer class="bg-emerald-950 text-white pt-16 pb-12 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-bold text-lg">SMPN 3 COLOMADU</span>
+                    </div>
+                    <p class="text-emerald-100/80 text-sm font-light max-w-sm">
+                        Sekolah Menengah Pertama Negeri pilihan utama di Kabupaten Karanganyar yang berkomitmen mencetak generasi cerdas, religius, dan berwawasan global.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 uppercase tracking-wider text-emerald-400">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm text-emerald-100/80 font-light">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#profil" class="hover:text-white transition">Profil Sekolah</a></li>
+                        <li><a href="#visimisi" class="hover:text-white transition">Visi & Misi</a></li>
+                        <li><a href="#berita" class="hover:text-white transition">Berita Terbaru</a></li>
+                        <li><a href="#kontak" class="hover:text-white transition">Kontak & Lokasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 uppercase tracking-wider text-emerald-400">Jam Layanan</h4>
+                    <p class="text-sm text-emerald-100/80 font-light mb-2">Senin - Kamis: 07.00 - 15.00 WIB</p>
+                    <p class="text-sm text-emerald-100/80 font-light mb-4">Jumat: 07.00 - 11.30 WIB</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-8 h-8 bg-emerald-900 rounded-full flex items-center justify-center hover:bg-emerald-800 transition"><i class="fab fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 bg-emerald-900 rounded-full flex items-center justify-center hover:bg-emerald-800 transition"><i class="fab fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 bg-emerald-900 rounded-full flex items-center justify-center hover:bg-emerald-800 transition"><i class="fab fa-youtube text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-emerald-900 pt-8 text-center text-xs text-emerald-100/60 font-light">
+                &copy; 2026 SMPN 3 Colomadu, Kabupaten Karanganyar. Hak Cipta Dilindungi.
+            </div>
+        </div>
     </footer>
 
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
